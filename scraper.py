@@ -42,6 +42,6 @@ for location in ('python-village', 'bioinformatics-stronghold', 'bioinformatics-
         data['id'] = id
         data['link'] = link
         data['description'] = description
-        if not scraperwiki.sqlite.select('* from swdata where id=?', [id]):
+        if not scraperwiki.sqlite.select('* from data where id=?', [id]):
             data['time'] = get_publish_date(link)
             scraperwiki.sqlite.save(['id'], data)
